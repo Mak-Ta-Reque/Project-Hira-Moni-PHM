@@ -16,8 +16,8 @@ import dotenv
 import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # This is new:
 # This is new:
 dotenv_file = os.path.join(BASE_DIR, ".env")
