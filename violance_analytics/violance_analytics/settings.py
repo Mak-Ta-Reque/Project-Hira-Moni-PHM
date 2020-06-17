@@ -16,7 +16,8 @@ import dotenv
 import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# This line should already exist in your settings.py
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))git
 # This is new:
 
 import dotenv
