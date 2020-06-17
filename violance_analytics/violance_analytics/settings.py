@@ -16,30 +16,13 @@ import dotenv
 import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-# This line should already exist in your settings.py
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))git
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # This is new:
-
-import dotenv
-DOTENV_FILE = os.path.join(BASE_DIR, ".env")
-ENV = False
-
-if os.path.isfile(DOTENV_FILE):
-    ENV = True
-if ENV:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': dotenv.get_key(DOTENV_FILE, 'DB_NAME'),
-            'USER': dotenv.get_key(DOTENV_FILE, 'DB_USER'),
-            'PASSWORD': dotenv.get_key(DOTENV_FILE, 'DB_PASSWORD'),
-            'HOST': dotenv.get_key(DOTENV_FILE, 'DB_HOST'),
-            'PORT': dotenv.get_key(DOTENV_FILE, 'DB_PORT')
-        }
-    }
-else:
-    DATABASES = dict()
-    DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+# This is new:
+dotenv_file = os.path.join(BASE_DIR, ".env")
+if os.path.isfile(dotenv_file):
+    dotenv.load_dotenv(dotenv_file)
 
 
 # Quick-start development settings - unsuitable for production
@@ -104,7 +87,6 @@ WSGI_APPLICATION = 'violance_analytics.wsgi.application'
 DATABASES = {}
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -140,21 +122,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
-#STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
 # This should already be in your settings.py
 django_heroku.settings(locals())
 # This is new
-if not ENV:
-    del DATABASES['default']['OPTIONS']['sslmode']
+del DATABASES['default']['OPTIONS']['sslmode']
