@@ -1,1 +1,1 @@
-web: gunicorn violance_analytics.wsgi.py --log-files -
+web: gunicorn violance_analytics.wsgi.py --log-file -
