@@ -66,7 +66,7 @@ ROOT_URLCONF = 'violance_analytics.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')], # leting django know where is the template folder
+        'DIRS': [], # leting django know where is the template folder os.path.join(BASE_DIR, 'templates')
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
