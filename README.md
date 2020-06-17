@@ -1,2 +1,2 @@
 # violence-against-women-bd
-It is an open source project to track violence against women in sub-urban level. 
+It is an open source project to track violence against women in sub-urban level in Bangladesh
