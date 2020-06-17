@@ -1,1 +1,1 @@
-web: violance_analytics.violance_analytics.wsgi.py --log-files -
+web: violance_analytics.wsgi.py --log-files -
