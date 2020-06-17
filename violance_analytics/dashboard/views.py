@@ -6,7 +6,7 @@ from .forms import CreateNewList
 from django.http import HttpResponseRedirect, HttpResponse
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'index.html')
 
 
 def population_chart(request):
