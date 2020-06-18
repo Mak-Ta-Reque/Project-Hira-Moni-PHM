@@ -40,7 +40,7 @@ The seeting icon in the right corner ->
 Add -> Existing environment -> Locate the created <phm_env> folder
  
 ```
-#### PyCharm can also create create a  New environment for you if you dont hace one 
+#### PyCharm can also create create a  New environment for you if you don't have one 
 
 ```
 Click:  Preferences -> Project Interpreter -> 
