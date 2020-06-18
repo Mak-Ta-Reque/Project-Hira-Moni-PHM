@@ -1,8 +1,8 @@
-
-# Bock files from uploading remote
 .idea
 .env
+venv
 env
+
 ### Django ###
 *.log
 *.pot
