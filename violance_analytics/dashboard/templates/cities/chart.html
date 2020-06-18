@@ -12,7 +12,7 @@
         labels: [{% for item in qs %}'{{item.name}}',{% endfor %}],
         datasets: [{
             label: 'Violence Count',
-            data: [{% for item in qs %}'{{item.violence}}',{% endfor %}],
+            data: [{% for item in qs %}'{{item.violance}}',{% endfor %}],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
