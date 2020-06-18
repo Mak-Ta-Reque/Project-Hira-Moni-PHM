@@ -1,1 +1,1 @@
-web: sh -c 'cd ./violance_analytlics/ && exec gunicorn violance_analytics.wsgi --log-file -'
+web: sh -c 'cd ./violance_analytics/ && exec gunicorn violance_analytics.wsgi --log-file -'
