@@ -26,12 +26,13 @@ def victim_application_view(request):
 
     if request.method == 'POST':
         form = VictimeApplicationForm(request.POST)
+
         if form.is_valid():
+            print('Valid')
             form.save()
 
     form = VictimeApplicationForm()
     return render(request, 'form.html', {'form': form})
-
 
 
 
