@@ -47,8 +47,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'dashboard'
+    'dashboard',
+    'victim_app',
+    'crispy_forms'
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -60,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 ROOT_URLCONF = 'violance_analytics.urls'
 
@@ -126,6 +132,13 @@ USE_TZ = True
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+
+]
+MEDIA_URL = '/media/'
+
+
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
