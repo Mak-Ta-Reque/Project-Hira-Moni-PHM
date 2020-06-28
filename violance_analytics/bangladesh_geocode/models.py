@@ -74,3 +74,11 @@ class Unions(models.Model):
 
     def __str__(self):
         return self.name
+
+
+def populate_database():
+    import pandas as pd
+    from ..violance_analytics import settings
+    file_name = settings.BASE_DIR
+    print(file_name)
+    dfs = pd.read_excel(file_name, sheetname=None)
