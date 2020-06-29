@@ -135,5 +135,16 @@ You might need to setup SSH for that
 pip3 install -r requirements.txt 
 ```
 
+#### Enabling database
+```
+make a file .env inside violence-against-women-bd and write 
+DATABASE_URL=sqlite:///db.sqlite3 
+
+```
+Do not upload this file in git
+
+Without this you will get key error.
 #### Open the project in your IDE and start coding. 
+
+
 
