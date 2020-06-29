@@ -3,13 +3,12 @@ from django.views.generic import TemplateView
 from .models import City
 from rest_framework.views import APIView
 from rest_framework.response import Response
-
+from django.contrib.auth.decorators import login_required
 
 
 
 class CityCharView(TemplateView):
     template_name = 'cities/chart.html'
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["qs"] = City.objects.all()
@@ -30,5 +29,4 @@ class ListCity(APIView):
         Return a list of all users.
         """
         violence_count = {city.violence for city in City.objects.all()}
-        print(violence_count)
         return Response(violence_count)

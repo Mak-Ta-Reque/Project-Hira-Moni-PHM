@@ -50,8 +50,8 @@ INSTALLED_APPS = [
     'dashboard',
     'victim_app',
     'crispy_forms',
-    'bangladesh_geocode'
-
+    'bangladesh_geocode',
+     'authenticator'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

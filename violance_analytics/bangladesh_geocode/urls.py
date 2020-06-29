@@ -31,4 +31,4 @@ def populate_database():
     print(dfs.head())
 
 
-populate_database()
+#populate_database()
