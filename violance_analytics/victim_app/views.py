@@ -23,6 +23,7 @@ def contact(request):
     return render(request, 'form.html', {'form': form})
 
 
+@login_required(login_url='login')
 def victim_application_view(request):
 
     if request.method == 'POST':

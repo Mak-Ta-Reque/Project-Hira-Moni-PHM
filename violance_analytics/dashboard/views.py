@@ -30,3 +30,7 @@ class ListCity(APIView):
         """
         violence_count = {city.violence for city in City.objects.all()}
         return Response(violence_count)
+
+
+def open_dashboard(request):
+    return render(request, 'dashboard.html')

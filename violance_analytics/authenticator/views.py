@@ -35,7 +35,7 @@ def loginUser(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('contact')
+                return redirect('application')
             else:
                 messages.info(request, 'Username or password is incorrect.')
 
