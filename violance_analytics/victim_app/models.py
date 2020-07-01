@@ -1,5 +1,5 @@
 from django.db import models
-
+from bangladesh_geocode.models import Divisions, Districts, Upzilas, Unions
 # Create your models here.
 
 
@@ -53,10 +53,10 @@ class VictimApplication(models.Model):
     incident_type = models.CharField(max_length=20, choices=INCIDENTS, default=MENTAL_TORTURE)
     incident_date = models.DateField()
     place = models.CharField(max_length=50)
-    address_1 = models.CharField(max_length=50)
-    address_2 = models.CharField(max_length=50)
-    address_3 = models.CharField(max_length=50)
-    address_4 = models.CharField(max_length=50)
+    address_1 = models.ForeignKey(Unions, on_delete=models.CASCADE)
+    address_2 = models.ForeignKey(Upzilas, on_delete=models.CASCADE)
+    address_3 = models.ForeignKey(Districts, on_delete=models.CASCADE)
+    address_4 = models.ForeignKey(Divisions, on_delete=models.CASCADE)
     address_5 = models.CharField(max_length=20, default='Bangladesh')
     gender = models.CharField(max_length=15, choices=GENDER, default=FEMALE)
     relation_with_criminal = models.CharField(max_length=20,choices=RELATION, default=UNKNOWN)

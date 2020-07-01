@@ -30,14 +30,9 @@ class ContactForm(forms.Form):
 
 
 class VictimeApplicationForm(forms.ModelForm):
-
     class Meta:
         model = VictimApplication
-        fields = ['name', 'incident_type', 'incident_date','place','address_1','address_2',
-                  'address_3',    'address_4',    'address_5',
-                  'gender', 'relation_with_criminal', 'witness', 'witness_name',
-                  'informed_authority', 'authority_name', 'description',
-                  'current_status_of_victim']
+        fields = '__all__'
         widgets = {
             'incident_date': DateInput(attrs= {'type':'date'})
         }
@@ -50,7 +45,6 @@ class VictimeApplicationForm(forms.ModelForm):
         self.fields['address_3'].label = "District"
         self.fields['address_4'].label = "Division"
         self.fields['address_5'].label = "Country"
-
         self.helper = FormHelper
         self.helper.form_method = 'post'
         self.helper.layout = Layout('name', 'incident_type', 'incident_date',

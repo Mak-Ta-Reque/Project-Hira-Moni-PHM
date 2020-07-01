@@ -23,7 +23,7 @@ def populate_database():
         district = row['admin2Name_en']
         upazilla = row['admin3Name_en']
         union = row['admin4Name_en']
-        div = Divisions(name = division, bn_name ='n')
+        div = Divisions(name=division, bn_name ='n')
         div.save()
 
 
