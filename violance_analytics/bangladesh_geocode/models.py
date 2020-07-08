@@ -4,6 +4,7 @@ from django.db import models
 
 
 class Divisions(models.Model):
+    division_id = models.IntegerField(default=0)
     name = models.CharField(max_length=250)
     bn_name = models.CharField(max_length=250)
     url = models.URLField(max_length=500, null=True, blank=True, default=None)
@@ -20,6 +21,7 @@ class Divisions(models.Model):
 
 
 class Districts(models.Model):
+    district_id = models.IntegerField(default=0)
     division = models.ForeignKey(Divisions, on_delete=models.CASCADE)
     name = models.CharField(max_length=250)
     bn_name = models.CharField(max_length=250)
@@ -39,6 +41,7 @@ class Districts(models.Model):
 
 
 class Upzilas(models.Model):
+    upzila_id = models.IntegerField(default=0)
     district = models.ForeignKey(Districts, on_delete=models.CASCADE)
     name = models.CharField(max_length=250)
     bn_name = models.CharField(max_length=250)
@@ -58,6 +61,7 @@ class Upzilas(models.Model):
 
 
 class Unions(models.Model):
+    union_id = models.IntegerField(default=0)
     upzila = models.ForeignKey(Upzilas, on_delete=models.CASCADE)
     name = models.CharField(max_length=250)
     bn_name = models.CharField(max_length=250)
@@ -75,10 +79,3 @@ class Unions(models.Model):
     def __str__(self):
         return self.name
 
-
-def populate_database():
-    import pandas as pd
-    from ..violance_analytics import settings
-    file_name = settings.BASE_DIR
-    print(file_name)
-    dfs = pd.read_excel(file_name, sheetname=None)
