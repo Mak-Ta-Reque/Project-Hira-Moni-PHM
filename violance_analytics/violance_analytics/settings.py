@@ -49,10 +49,10 @@ INSTALLED_APPS = [
     'dashboard',
     'victim_app',
     'crispy_forms',
-    'bangladesh_geocode',
     'authenticator',
     'channels',
-    'channels_redis'
+    'channels_redis',
+    'bangladesh_geocode',
 ]
 
 
