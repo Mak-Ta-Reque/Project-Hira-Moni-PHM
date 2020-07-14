@@ -69,6 +69,18 @@ deativate
 python violance_analytics\manage.py runserver
 ```
 
+#### Enabling database
+```
+make a file .env inside root of the project and write 
+DATABASE_URL=sqlite:///db.sqlite3 
+
+```
+Do not upload this file in git
+
+Without this you will get key error.
+#### Open the project in your IDE and start coding. 
+
+
 
 #### Setting up the development environment (Linux)
 ```
@@ -137,7 +149,7 @@ pip3 install -r requirements.txt
 
 #### Enabling database
 ```
-make a file .env inside violence-against-women-bd and write 
+make a file .env inside root of the project and write 
 DATABASE_URL=sqlite:///db.sqlite3 
 
 ```
