@@ -59,6 +59,8 @@ class VictimApplication(models.Model):
     address_4 = models.ForeignKey(Divisions, on_delete=models.CASCADE)
     address_5 = models.CharField(max_length=20, default='Bangladesh')
     gender = models.CharField(max_length=15, choices=GENDER, default=FEMALE)
+    age_victim = models.PositiveSmallIntegerField(null=True)
+    age_criminal = models.PositiveSmallIntegerField(null=True)
     relation_with_criminal = models.CharField(max_length=20,choices=RELATION, default=UNKNOWN)
     witness = models.BooleanField(default=False)
     witness_name = models.CharField(max_length=20, default='No name')
