@@ -8,7 +8,7 @@ from django.contrib.auth import authenticate, login, logout
 
 def registerUser(request):
     if request.user.is_authenticated:
-        return redirect('contact')
+        return redirect('dashboard')
     else:
 
         form = CreateUserForm()

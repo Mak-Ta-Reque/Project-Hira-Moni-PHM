@@ -9,31 +9,6 @@ import plotly.graph_objects as go
 from . import db_manager
 
 
-class CityCharView(TemplateView):
-    template_name = 'cities/chart.html'
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["qs"] = City.objects.all()
-        return context
-
-
-
-class ListCity(APIView):
-    """
-    View to list all users in the system.
-
-    * Requires token authentication.
-    * Only admin users are able to access this view.
-    """
-
-    def get(self, request, format=None):
-        """
-        Return a list of all users.
-        """
-        violence_count = {city.violence for city in City.objects.all()}
-        return Response(violence_count)
-
-
 def open_dashboard(request):
     def scatter():
         x1 = db_manager.fetch_division_names()
@@ -69,3 +44,9 @@ def open_dashboard(request):
         'plot1': scatter()
     }
     return render(request, 'dashboard.html', context)
+
+
+# Link to a contributors page
+
+def contributors(request):
+    return render(request, 'contributors.html')
