@@ -7,4 +7,4 @@ urlpatterns = [
 
 
 
-db_manager.populate_database()
+#db_manager.populate_database()
