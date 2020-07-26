@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 <title>{% block title %} City wise violence rate {% endblock title %}</title>
-
+{% csrf_token %}
 {% block scripts %}
 <script>
     $(document).ready(function () {

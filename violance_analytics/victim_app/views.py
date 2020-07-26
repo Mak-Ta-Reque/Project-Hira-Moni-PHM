@@ -1,11 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import ContactForm, VictimeApplicationForm
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
+@login_required(login_url='login')
 def contact(request):
-
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -22,17 +23,17 @@ def contact(request):
     return render(request, 'form.html', {'form': form})
 
 
+@login_required(login_url='login')
 def victim_application_view(request):
-
-    if request.method == 'POST':
-        form = VictimeApplicationForm(request.POST)
-
-        if form.is_valid():
-            print('Valid')
-            form.save()
-
     form = VictimeApplicationForm()
-    return render(request, 'form.html', {'form': form})
+    if request.method == 'POST':
+        print('POST')
+        form = VictimeApplicationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('dashboard')
+    context = {'form': form}
+    return render(request, 'userinput_form.html', context)
 
 
 

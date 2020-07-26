@@ -1,10 +1,9 @@
 from django.urls import path
-from . import views
-
-from .views import CityCharView, ListCity
+from .views import open_dashboard, contributors
+from .dash_apps.finished_apps import simpleexample
 
 
 urlpatterns = [
-    path('chart', CityCharView.as_view(), name='chart'),
-
+    path('', open_dashboard, name='dashboard'),
+    path('contributors', contributors, name='contributors')
 ]

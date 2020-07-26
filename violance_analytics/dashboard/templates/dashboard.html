@@ -1,0 +1,96 @@
+{% extends "layout/base.html" %}
+{% load static %}
+{% block title %} Dashboard {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="row">
+
+      <div class="col-12">
+        <div class="card card-chart">
+          <div class="card-header ">
+            <div class="row">
+              <div class="col-sm-6 text-left">
+
+                <h2 class="card-title">Number of incident per area</h2>
+              </div>
+              <div class="col-sm-6">
+                <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+
+                    <input type="date" id="from_date" name="trip-start"
+                      value="From (e.g. 2018-07-22)" min="2018-01-01" max="2018-12-31">
+                  <input type="date" id="to_date" name="trip-start"
+                      value="To (e.g. 2018-07-22)" min="2018-01-01" max="2018-12-31">
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="chart-area">
+             {{ plot1 | safe }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card card-chart">
+          <div class="card-header">
+            <h5 class="card-category">Victim vs Culprit</h5>
+            <h6 class="card-title"><i class=""></i> Pie chart on victim and culprit connection</h6>
+          </div>
+          <div class="card-body">
+            <div class="chart-area">
+              <canvas id="chartLinePurple"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card card-chart">
+          <div class="card-header">
+            <h5 class="card-category">To Decide</h5>
+            <h6 class="card-title"><i class=""></i> What can we present here?</h6>
+          </div>
+          <div class="card-body">
+            <div class="chart-area">
+              <canvas id="CountryChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card card-chart">
+          <div class="card-header">
+            <h5 class="card-category">Heat Map</h5>
+            <h6 class="card-title"><i class=""></i>Geographical heat map on intensity of rape</h6>
+          </div>
+          <div class="card-body">
+            <div class="chart-area">
+              <canvas id="chartLineGreen"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+<!-- {% block javascripts %}
+
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/js/demos.js
+      //demo.initDashboardPageCharts();
+
+    });
+  </script>
+
+{% endblock javascripts %}
+-->
