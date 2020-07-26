@@ -1,6 +1,7 @@
 from django.db import transaction
 
 #@transaction.atomic
+
 def populate_database():
     import pandas as pd
     import os
