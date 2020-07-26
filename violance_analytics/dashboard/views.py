@@ -38,8 +38,6 @@ def open_dashboard(request):
     def scatter():
         x1 = db_manager.fetch_division_names()
         y1 = db_manager.fetch_division_crime_count(x1)
-        #x1 = ['Dhaka', 'Sylhet', 'Chittagong', 'Barishal']
-        #y1 = [30, 35, 10, 45, 50, 30, 10, 15]
         trace = go.Bar(
             x=x1,
             y=y1

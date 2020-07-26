@@ -10,7 +10,6 @@ def fetch_division_names():
     return name_list
 
 def fetch_division_crime_count(name_list):
-    print ("helo")
     counts = []
     for x in name_list:
         div_object = Divisions.objects.get(name=x)
