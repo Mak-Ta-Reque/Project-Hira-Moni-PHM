@@ -23,7 +23,7 @@ django-crispy-forms==1.9.1
 django-heroku==0.3.1
 django-plotly-dash==1.4.2
 django-redis==4.12.1
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 dpd-components==0.1.0
 Flask==1.1.2
 Flask-Compress==1.5.0
